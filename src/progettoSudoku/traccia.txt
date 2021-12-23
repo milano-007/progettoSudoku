@@ -1,0 +1,32 @@
+Progetto SUDOKU
+Si deve sviluppare una classe Sudoku, basata sulla tecnica backtracking, per la risoluzione di un
+problema (gioco) di sudoku vincolato. Si ricorda che nel gioco del Sudoku si dispone di una matrice
+9x9 nelle cui celle vanno inseriti (ripetutamente) tutti i numeri da 1 a 9 nel rispetto dei
+seguenti vincoli:
+1) non è possibile inserire un numero in una cella già occupata (impostata);
+2) non è possibile inserire un numero in una cella vuota, se lo stesso numero è già presente sulla
+stessa riga o sulla stessa colonna, o all’interno della stessa sotto griglia 3x3 (nove in tutto) in cui
+si può suddividere la matrice 9x9. Le nove sotto griglie 3x3 hanno come coordinate di partenza
+(indici di riga/colonna della cella più in alto a sinistra): <0,0>, <0,3>, <0,6>, <3,0>, <3,3>, <3,6>,
+<6,0>, <6,3>, <6,6>. A questo punto, data una cella <i,j> è facile identificare in quale sotto griglia
+essa ricade.
+La classe Sudoku deve ammettere il costruttore di default Sudoku(), che inizializza a 0 tutte le celle
+della matrice, ed un metodo void imposta(int i, int j, int v) che chiede di impostare al valore v (un intero
+tra 1 e 9) la cella di indici i e j. Resta inteso che un’impostazione, per essere accettabile, deve
+soddisfare i vincoli.
+Il metodo pubblico void risolvi(), invocato dopo una fase di impostazioni, avvia il processo di
+risoluzione per tentativi del gioco. Metodi privati di Sudoku sono i soliti metodi di un’organizzazione
+a backtracking:
+boolean assegnabile( P p, S s );
+void assegna( P ps, S s );
+void deassegna( P ps, S s );
+void scriviSoluzione();
+boolean esisteSoluzione();//esisteSoluzione
+P prossimoPuntoDiScelta( P p );//prossimoPuntoDiScelta
+boolean esisteProssimoPuntoDiScelta( P p );//prossimoPuntoDiScelta
+Collection<S> scelte( P p );
+boolean ultimaSoluzione()
+Si suggerisce di considerare come punti di scelta le celle (9x9 in tutto) della matrice (ogni cella è
+individuata dai suoi indici <i,j>) non pre-impostate, e come scelte, per ogni punto di scelta non
+bloccato, i possibili numeri da 1 a 9, che rispettano i vincoli. Il valore 0 indica, per convenzione, che
+una cella è vuota.
