@@ -6,8 +6,9 @@ import java.util.List;
 
 public class NRegine extends Backtracking<Integer,Integer> {
 
-    private boolean [][]board;
-    private int n, nrSol=0;
+    private final boolean [][]board;
+    private final int n;
+    private int nrSol=0;
     private int regineAssegnate=0;
 
     public NRegine(int n) {
@@ -22,6 +23,11 @@ public class NRegine extends Backtracking<Integer,Integer> {
         for( int i=0; i<n; ++i )
             s.add(i);
         return s;
+    }
+
+    @Override
+    protected Integer primoPuntoDiScelta() {
+        return 0;
     }
 
     @Override
@@ -84,7 +90,7 @@ public class NRegine extends Backtracking<Integer,Integer> {
     }
 
     public static void main( String[] args ) {
-        new NRegine(8).risolvi(0);
+        new NRegine(8).risolvi();
     }//main
 
 }

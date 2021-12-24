@@ -21,12 +21,7 @@ public abstract class Backtracking<P,S> {
         return false; //cerca tutte le possibili soluzioni
     }//ultimaSoluzione
 
-    //private List<P> ps;
-    //private P primoPuntoDiScelta() {
-    //	return ps.get(0);
-    //}//primoPuntoDiScelta
-    //factory
-    //protected abstract List<P> puntiDiScelta();
+    protected abstract P primoPuntoDiScelta();
 
     protected final void tentativo( P p ) {
         Collection<S> sa=scelte(p); //scelte ammissibili per p
@@ -49,8 +44,11 @@ public abstract class Backtracking<P,S> {
     }//tentativo
 
     public final void risolvi(P p) {
-        //ps=puntiDiScelta();
-        tentativo( p );
+        tentativo(p);
     }//risolvi
+
+    public final void risolvi() {
+        tentativo(primoPuntoDiScelta());
+    }
 
 }
