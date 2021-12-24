@@ -33,8 +33,10 @@ public abstract class Backtracking<P,S> {
         for( S s: sa) {
             if( assegnabile(p,s) ) {
                 assegna(p,s);
-                if( esisteSoluzione() )
+                if( esisteSoluzione() ) {
                     scriviSoluzione();
+                    System.out.println();
+                }
                 if( ultimaSoluzione() )
                     break;//in questo modo blocco l'intero backtracking
                 if (esisteProssimoPuntoDiScelta(p)) {
