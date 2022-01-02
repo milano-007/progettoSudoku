@@ -90,7 +90,8 @@ public class NRegine extends Backtracking<Integer,Integer> {
     }
 
     public static void main( String[] args ) {
-        new NRegine(8).risolvi();
+        Thread t = new Thread(new Prova());
+        t.start();
     }//main
 
 }

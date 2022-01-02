@@ -163,7 +163,7 @@ public class Sudoku extends Backtracking<Integer, Integer> {
                 0 0 9 0 1 0 6 0 0
                 """;
 
-        Sudoku s = new Sudoku(griglia);
+        Sudoku s = new Sudoku(board);
         s.risolvi();
     }
 }
