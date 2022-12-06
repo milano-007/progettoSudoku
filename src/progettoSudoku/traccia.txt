@@ -30,3 +30,5 @@ Si suggerisce di considerare come punti di scelta le celle (9x9 in tutto) della 
 individuata dai suoi indici <i,j>) non pre-impostate, e come scelte, per ogni punto di scelta non
 bloccato, i possibili numeri da 1 a 9, che rispettano i vincoli. Il valore 0 indica, per convenzione, che
 una cella è vuota.
+
+Giastra
